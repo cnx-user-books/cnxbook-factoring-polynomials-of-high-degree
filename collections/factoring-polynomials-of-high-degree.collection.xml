@@ -1,0 +1,55 @@
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" type="Book">
+  <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
+  <md:content-id>col10494</md:content-id>
+  <md:title>Factoring Polynomials of High Degree</md:title>
+  
+  
+  <md:license url="http://creativecommons.org/licenses/by/3.0/"/>
+  <md:language>en</md:language>
+
+  
+
+  
+  
+  <md:uuid>825e6830-04a5-4fb3-9546-780092bf3429</md:uuid>
+<md:slug>factoring-polynomials-of-high-degree</md:slug>
+</metadata>
+
+  <col:content>
+    
+      <col:module document="m15571"/>
+        
+      
+    
+    
+      <col:module document="m15573"/>
+        
+      
+    
+    
+      <col:module document="m15575"/>
+        
+      
+    
+    
+      <col:module document="m15576"/>
+        
+      
+    
+    
+      <col:module document="m15574"/>
+        
+      
+    
+    
+      <col:module document="m15577"/>
+        
+      
+    
+    
+      <col:module document="m15578"/>
+        
+      
+    
+  </col:content>
+</col:collection>

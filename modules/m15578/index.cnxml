@@ -1,0 +1,30 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+  <title>Zero location for Polynomials with Random Coefficients</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m15578</md:content-id>
+  <md:title>Zero location for Polynomials with Random Coefficients</md:title>
+  <md:abstract>The zeros of a polynomial with random coefficients cluster around the unit circle in the complex plane.  As the degree increases, the roots cluster tighter and tighter to the unit circle.  This phenomenon is illustrated here.</md:abstract>
+  <md:uuid>ae75541e-2ec6-4985-a574-c9dda3d69530</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-43244802925">
+      <title>Zero Location of Polynomials with Random Coefficients</title>
+      <para id="id9491315">The location of the zeros of polynomials with random coefficients have the remarkable property of being clustered around the unit circle of the complex plane. They are uniformly distributed around the unit circle with a very sharp peak in their radial distribution at one. This has been reported and described in 1966 by Arnold and <link document="m15576"> others </link>, but only with the development of the <link document="m15573"> Lindsey-Fox </link> algorithm have we been able to factor really high degree polynomials and observe the phenomenon. Thousands of multi-thousand degree polynomials with random coefficients have been factored and a few multi-million degree ones as well. The following plots of the locations of these zeros will illustrate the phenomenon. There is a <link document="m15576"> literature </link> on this subject, but seeing the actual root location is still impressive and informative and aids in developing other factoring strategies.</para>
+      <para id="id8901762">The following figures show the zero locations for random coefficient polynomials of degree 10 through 2000. These were found using Matlab by generating the random coefficients with the “rand” command, then factoring the resulting polynomial with the “roots” command (an eigenvalue method), and finally creating the graphics with the “plot” command. The results are relatively independent of the type of distribution of the random coefficients.</para><figure id="element-387"><media id="id8760909" alt=""><image src="../../media/Picture11.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=10 </caption></figure><figure id="element-476"><media id="id3606893" alt=""><image src="../../media/Picture13.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=20 </caption></figure><figure id="element-176"><media id="id5444697" alt=""><image src="../../media/Picture15.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=50 </caption></figure><figure id="element-935"><media id="id5145783" alt=""><image src="../../media/Picture17.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=100 </caption></figure><figure id="element-406"><media id="id1170259911611" alt=""><image src="../../media/Picture19.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=200 </caption></figure><figure id="element-906"><media id="id3716633" alt=""><image src="../../media/Picture21.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=500 </caption></figure><figure id="element-519"><media id="id1170268266843" alt=""><image src="../../media/Picture23.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=1000 </caption></figure><figure id="element-159"><media id="id6453489" alt=""><image src="../../media/Picture25.jpg" mime-type="image/jpeg" height="500" width="500"/></media>
+<caption>Zero Locations for N=2000 </caption></figure><para id="element-701">The following figures show histograms of the radial distribution or density of the zeros of polynomials with random coefficients. The random coefficients were generated in Matlab and the factoring was done with the <link document="m15573"> Lindsey-Fox algorithm </link> in Matlab.</para><para id="element-424">Although it is not easy to see from these figures, the shapes of the distributions are fairly independent of degree and the width is almost exactly linear with the inverse of the degree.  As the degree goes to infinity, the zeros all go to the unit circle!</para><figure id="element-14"><media id="id4503215" alt=""><image src="../../media/Picture1.jpg" mime-type="image/jpeg" width="750"/></media>
+<caption>Number of Zeros at a Radial Distance in the Complex plane, N=100</caption></figure><figure id="element-838"><media id="id2492060" alt=""><image src="../../media/Picture2.jpg" mime-type="image/jpeg" width="750"/></media>
+<caption>Number of Zeros at a Radial Distance in the Complex plane, N=1,000</caption></figure><figure id="element-248"><media id="id1170260683173" alt=""><image src="../../media/Picture5.jpg" mime-type="image/jpeg" width="508"/></media>
+<caption>Number of Zeros at a Radial Distance in the Complex plane, N=10,000</caption></figure><figure id="element-82"><media id="id3476438" alt=""><image src="../../media/Picture7.jpg" mime-type="image/jpeg" width="507"/></media>
+<caption>Number of Zeros at a Radial Distance in the Complex plane, N=100,000</caption></figure><figure id="element-460"><media id="id5267534" alt=""><image src="../../media/Picture9.jpg" mime-type="image/jpeg" width="450"/></media>
+<caption>Number of Zeros at a Radial Distance in the Complex plane, N=1,000,000</caption></figure>
+    </section>
+  </content>
+</document>

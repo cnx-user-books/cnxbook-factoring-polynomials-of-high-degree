@@ -1,0 +1,36 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>References for the LF Algorithm</title>
+  <metadata>
+  <md:content-id>m15576</md:content-id><md:title>References for the LF Algorithm</md:title>
+  <md:abstract>References for the Lindsey-Fox polynomial factoring algorithm</md:abstract>
+  <md:uuid>cc81a8ba-2d26-473f-9220-b0a326cbaf30</md:uuid>
+</metadata>
+
+<content>
+    <section id="id-539930714561">
+      <title>References </title>
+      <para id="element-965">Below are several references on the <link document="m15573"> Lindsey-Fox algorithm </link> and on the zero distribution for polynomials with random coefficients.</para><list id="id9349349" list-type="enumerated"><item>J. P. Lindsey and James W. Fox. “A method of factoring long z-transform polynomials”, <cite><cite-title>Computational Methods in Geosciences</cite-title></cite>, SIAM, pp. 78-90, 1992. </item>
+        <item>Osman Osman (editor), <cite><cite-title>Seismic Source Signature Estimation and Measurement</cite-title></cite>, Geophysics Reprint Series #18, Society of Exploration Geophysicists (SEG), 1996, pp. 712-724.</item>
+        <item>Gary A. Sitton, C. Sidney Burrus, James W. Fox, and Sven Treitel. “Factoring very high degree polynomials”. <cite><cite-title>IEEE Signal Processing Magazine</cite-title></cite>, 20(6):27-42, November 2003. </item>
+        <item>C. S. Burrus, J. W. Fox, G. A. Sitton, and S. Treitel, “Factoring High Degree Polynomials in Signal Processing”, <cite><cite-title>Proceedings of the IEEE DSP Workshop</cite-title></cite>, Taos, NM, Aug. 3, 2004, pp. 156-157.</item>
+        <item>Zhonggang Zeng, "Computing Multiple Roots of Inexact Polynomials", ACM ISSAC, 2003. also: <cite><cite-title>Math. Comp.</cite-title></cite> 74 (2005), 869 - 903. </item>
+        <item>Zhonggang Zeng, Northeastern Illinois University, March 10, 2006, MultRoot -- A Matlab package computing polynomial roots and multiplicities <link url="http://www.neiu.edu/~zzeng/multroot.htm">http://www.neiu.edu/~zzeng/multroot.htm, </link></item>
+        <item>L. Arnold, “Uber die nullstellenverteilung zuf älliger polynome,” <cite><cite-title>Mathematische Zeitschrift</cite-title></cite>, vol. 92, pp. 12–18, 1966. </item>
+        <item>Larry A. Shepp and Robert J. Vanderbei, “The Complex Zeros of Random Polynomials”, Transactions of the American Mathematical Society, Vol 347, # 11, Nov. 1995, pp 4365-4384.
+</item>
+        <item>Ildar Ibragimov &amp; Ofer Zeitouni, “On Roots of Random Polynomials”, <cite><cite-title>Transactions of the American Mathematical Society</cite-title></cite>, vol 349, # 6, June 1997, pp 2427-2441.</item>
+        <item>Bharucha-Reid and Sambandham, <cite><cite-title>Random Polynomials,</cite-title></cite> Adademic Press, 1986. </item>
+        <item>J. H. Wilkinson.<cite><cite-title> Rounding Errors in Algebraic Processes</cite-title></cite>. Prentice-Hall, 1963. </item>
+        <item>N. J. Higham, <cite><cite-title>Accuracy and Stability of Numerical Algorithms,</cite-title></cite> SIAM, 1996. Second edition 2002. Chapter 5 on polynomials. </item>
+        <item>Lloyd N. Trefethen and David Bau, <cite><cite-title>Numerical Linear Algebra,</cite-title></cite> SIAM, 1997.</item>
+        <item>C. S. Burrus, J. W. Fox, G. A. Sitton, and S. Treitel, “Factoring Very High Degree Polynomials”,<cite><cite-title> Rice Web Site,</cite-title></cite> March 10, 2006. <link url="http://www.dsp.ece.rice.edu/software/fvhdp.shtml">http://www-dsp.rice.edu/software/fvhdp.shtml</link></item>
+      <item>J. B. Moore, "A Convergent Algorithm for Solving Polynomials Equations", <cite><cite-title>Journal of the ACM</cite-title></cite>, 14(2):311-315, April 1967.</item>
+<item>J. B. Moore, "A Consistently Rapid Algorithm for Solving Polynomial Equations", <cite><cite-title>Journal of the Institute of Mathematics and Its Applications</cite-title></cite>, 17:990119, 1976.</item>
+<item>M. A. Jenkins and S. F. Traub, "A Three-Stage Algirithm for Real Polynomials using Quadratic Iterations",<cite><cite-title>SIAM Journal on Numerical Analysis</cite-title></cite>, 545-566, 1970.</item>
+<item>Laguerre's Method from Wikipedia:  http://en.wikipedia.org/wiki/Laguerre%27s_method</item>
+<item>H. J. Orchard, "The Laguerre Method for Finding the Zeros of Polynomials", IEEE Transaction on Circuits and Systems, vol. 36, November 1989, pages 1377-1381.</item>
+<item>C. P. Hughes and A. Nikeghbali, “The Zeros of Random Polynomials Cluster Uniformly near the Unit Circle”, Report of the American Institute of Mathematics in Palo Alto and the Laboratoire de Probabloiites et Models Aleatoires in Paris, prepublication no. 922, UMR 7599, June 2004. New version in arXiv:math/0406376v3, June 2007.</item>
+</list><para id="element-302">More details on the third stage of the Lindsey-Fox program can be found <link document="m15574"> here </link></para>
+    </section>
+  </content>
+</document>

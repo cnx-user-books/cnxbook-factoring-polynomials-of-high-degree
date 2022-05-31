@@ -1,0 +1,404 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>On Factoring Polynomials</title>
+  <metadata>
+  <md:content-id>m15571</md:content-id><md:title>On Factoring Polynomials</md:title>
+  <md:abstract>Factoring a high degree polynomial has been considered a difficult problem since the beginning of mathematics. We describe the strategies used to attack this problem. The results are from a group called the "Polynomial Club" (Jim Fox, Sidney Burrus, Gary Sitton, and Sven Treitel)</md:abstract>
+  <md:uuid>64eab28b-bf3f-454b-82c3-18afe66f67a5</md:uuid>
+</metadata>
+
+<content>
+    <section id="uid1">
+      <title>Introduction</title>
+      <para id="id2248149">Polynomials form one of the oldest classes of mathematical functions
+in mathematics with an important history in science, engineering, and other
+quantitative fields <link target-id="bid0">[Pan, 1997]</link>, <link target-id="bid1">[Pan, 1998]</link>, <link target-id="bid2">[Traub, 1998]</link>, <link target-id="bid3">[Derbyshire, 2006]</link>, <link target-id="bid4">[Sitton, 2003]</link>. Part of the
+polynomial's appeal comes from the fact that it may be numerically evaluated
+using a finite number of multiplications and additions. Another advantage
+it presents is its use in modeling physical processes or complicated mathematical
+functions. Polynomials are used to build expansion systems or basis sets in
+various vector spaces. Segments of polynomials are used to create splines.
+It is worth studying the basic ideas and the variety of applications.</para>
+      <para id="id2248190">Polynomials are introduced early in the teaching of algebra as a means of
+demonstrating basic principles and methods, e.g. substitution, simplification,
+and factoring. Most people are aware that there exist formulas for factoring
+quadratic (2nd degree), cubic (3rd degree), and quartic (4th degree) polynomials.
+In 1824 the mathematician Niels Abel proved that there is no possible "closed form" solution in terms of basic operations for the general pentic or quintic (5th degree) polynomial or those of
+higher degrees. This fact requires the development of effective numerical methods
+for iteratively factoring polynomials above degree 4.</para><para id="element-573">The results reported in these modules are from a group at Rice University called the "Polynomial Club" (Jim Fox, Sidney Burrus, Gary Sitton, and Sven Treitel).  The program was designed and written by Jim Fox.</para>
+    </section>
+    <section id="uid2">
+      <title>Basic Definitions</title>
+      <para id="id2248550">The definition of an <m:math><m:mi>N</m:mi></m:math>th degree polynomial is</para>
+      <equation id="uid3">
+        <m:math mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mi>z</m:mi>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>+</m:mo>
+            <m:mo>⋯</m:mo>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>N</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mi>N</m:mi>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:munderover>
+              <m:mo>∑</m:mo>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>0</m:mn>
+              </m:mrow>
+              <m:mi>N</m:mi>
+            </m:munderover>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mi>k</m:mi>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2248685">where both <m:math><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math> and <m:math><m:mi>z</m:mi></m:math> are complex valued
+and the coefficients <m:math><m:msub><m:mi>a</m:mi><m:mi>k</m:mi></m:msub></m:math> can be complex but are often real valued. <m:math><m:mi>N</m:mi></m:math>,
+which is the highest power of <m:math><m:mi>z</m:mi></m:math> in the polynomial, is called the
+degree (or sometimes the order) of the polynomial. The number of
+coefficients is <m:math><m:mrow><m:mi>N</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math>.</para>
+      <para id="id2248767">From the various forms of the <emphasis>Fundamental Theorem of Algebra</emphasis>, one
+can show that all polynomials can also be expressed in a “factored" form
+by</para>
+      <equation id="uid4"><m:math mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>N</m:mi>
+            </m:msub>
+            <m:munderover>
+              <m:mo>∏</m:mo>
+              <m:mrow>
+                <m:mi>r</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>N</m:mi>
+            </m:munderover>
+            <m:mrow>
+              <m:mo>(</m:mo>
+<m:mrow>
+              <m:mi>z</m:mi>
+              <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>z</m:mi>
+              <m:mi>r</m:mi>
+            </m:msub>
+</m:mrow>        
+   
+              <m:mo>)</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2247524">where the possibly complex valued <m:math><m:msub><m:mi>z</m:mi><m:mi>r</m:mi></m:msub></m:math> are called the “zeros" of the
+polynomial since <m:math><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>z</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. Because the zeros are not necessarily
+distinct, a unique form of <link target-id="uid4"/> is given by</para>
+      <equation id="uid5"><m:math mode="display">
+          <m:mrow>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>N</m:mi>
+            </m:msub>
+            <m:munderover>
+              <m:mo>∏</m:mo>
+              <m:mrow>
+                <m:mi>k</m:mi>
+                <m:mo>=</m:mo>
+                <m:mn>1</m:mn>
+              </m:mrow>
+              <m:mi>L</m:mi>
+            </m:munderover>
+            <m:mrow>
+              <m:mo>(</m:mo>
+<m:mrow>
+              <m:mi>z</m:mi>
+              <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>z</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+</m:mrow>        
+    <m:msup>
+              <m:mo>)</m:mo>         
+     <m:msub>
+                <m:mi>M</m:mi>
+                <m:mi>k</m:mi>
+              </m:msub>
+            </m:msup>
+</m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249212">where <m:math><m:msub><m:mi>M</m:mi><m:mi>k</m:mi></m:msub></m:math> is the multiplicity of the <m:math><m:msup><m:mi>k</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> zero, <m:math><m:mi>L</m:mi></m:math> is the number
+of distinct zeros, and <m:math><m:mrow><m:msub><m:mo>∑</m:mo><m:mi>k</m:mi></m:msub><m:msub><m:mi>M</m:mi><m:mi>k</m:mi></m:msub><m:mo>=</m:mo><m:mi>N</m:mi></m:mrow></m:math>. The first degree polynomials
+<m:math><m:mrow><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>-</m:mo><m:msub><m:mi>z</m:mi><m:mi>k</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> in <link target-id="uid4"/> and <link target-id="uid5"/> are called the factors of <m:math><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math>. Note the analogy between polynomials and integers.
+Indeed, multiplying two polynomials is the same operation as multiplying
+two integers (except for carrying) or convolving two number sequences.</para>
+      <para id="id2249340">Creating <link target-id="uid3"/> from <link target-id="uid4"/> or <link target-id="uid5"/> is fairly straight
+forward and requires only a finite number of arithmetic operations, but
+finding <link target-id="uid4"/> or <link target-id="uid5"/> from <link target-id="uid3"/> is difficult. That
+process is called “factoring" the polynomial and is the topic of these
+notes. Actually, the effects of finite precision arithmetic sometimes make
+the "unfactoring" process of calculating <link target-id="uid3"/> from <link target-id="uid4"/> or
+<link target-id="uid5"/> poorly defined because it depends on the sequence order of
+combining the zeros.</para>
+      <para id="id2249396">One can look at the zeros of a polynomial as being a second
+parameterization of the polynomial with the coefficient form of
+<link target-id="uid3"/> being the first. A combination would be expressing an even
+degree polynomial as the product of two <m:math><m:mrow><m:mi>N</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> degree polynomials.
+Factoring and “unfactoring" can create a variety of parameterizations for
+both discrete-time signals and systems.  It should be noted that the coefficients of the polynomial are nonlinear functions of all of the zeros, and the zeros of the polynomial are nonlinear functions of all of the coefficients.  In some cases, a very small change in one zero can cause a huge change in the coefficients and/or a very small change in a coefficient can cause a huge change in the zeros.  In these cases, the polynomials are called "poorly conditioned" and are very difficult to factor by any means.</para>
+    </section>
+    <section id="uid6">
+      <title>The Four Problems for Polynomials</title>
+      <list id="id2249436" list-type="enumerated"><item>Evaluating the polynomial and its derivatives.
+“polyval" in Matlab or <link document="m15099">   Horner's method </link>
+</item>
+        <item>Factoring the polynomial. “roots" in Matlab
+</item>
+        <item>Composing the factors. “poly" in Matlab or convolution perhaps using the FFT.
+</item>
+        <item>Deflating the
+polynomial by a root. <link document="m15099">   Horner's method </link> or FFT division.
+</item>
+      </list>
+      <para id="id2249484">If the polynomial is represented in factored form <link target-id="uid4"/>, then
+the coefficient sum form <link target-id="uid3"/> may be easily found by computing the
+product of the <m:math><m:mi>M</m:mi></m:math> linear polynomial factors. This is done by multiplying
+the linear factors one at a time and collecting all coefficients of like
+powers in the product. As will be shown later, this is equivalent to a
+cascaded discrete <emphasis>convolution</emphasis> of all of the polynomial coefficients
+where the <m:math><m:msup><m:mi>r</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> linear polynomial is represented as a doublet set of
+two coefficients <m:math><m:mrow><m:mo>{</m:mo><m:mo>-</m:mo><m:msub><m:mi>z</m:mi><m:mi>r</m:mi></m:msub><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>}</m:mo></m:mrow></m:math> where the leading coefficient <m:math><m:mrow><m:mo>-</m:mo><m:msub><m:mi>z</m:mi><m:mi>r</m:mi></m:msub></m:mrow></m:math> is
+usually complex. This computation allows the reconstruction of the
+coefficients of the polynomial corresponding to this root set. We call
+this process <emphasis>unfactoring</emphasis> but it can lead to large numerical
+inaccuracies for a surprisingly small number of terms. The main concern here is with the inverse or factoring problem:
+given the coefficient form <link target-id="uid3"/>, find the factored form
+<link target-id="uid4"/>.</para>
+      <para id="id2249602">The common case of purely real polynomial coefficients leads to a
+simplification: All of the complex roots of a <emphasis>real</emphasis> polynomial occur
+in complex <emphasis>conjugate</emphasis> pairs. Given the <m:math><m:msup><m:mi>r</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> complex root
+<m:math><m:mrow><m:msub><m:mi>z</m:mi><m:mi>r</m:mi></m:msub><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mi>r</m:mi></m:msub><m:mo>+</m:mo><m:mi>i</m:mi><m:msub><m:mi>y</m:mi><m:mi>r</m:mi></m:msub></m:mrow></m:math>, its complex conjugate is given by <m:math><m:mrow><m:msubsup><m:mi>z</m:mi><m:mi>r</m:mi><m:mo>*</m:mo></m:msubsup><m:mo>=</m:mo><m:msub><m:mi>x</m:mi><m:mi>r</m:mi></m:msub><m:mo>-</m:mo><m:mi>i</m:mi><m:msub><m:mi>y</m:mi><m:mi>r</m:mi></m:msub></m:mrow></m:math>.</para>
+      <para id="id2249714">Thus for <m:math><m:mrow><m:msub><m:mi>y</m:mi><m:mi>r</m:mi></m:msub><m:mo>≠</m:mo><m:mn>0</m:mn></m:mrow></m:math>, a complex root <m:math><m:msub><m:mi>z</m:mi><m:mi>r</m:mi></m:msub></m:math> will always be associated
+with its conjugate <m:math><m:msubsup><m:mi>z</m:mi><m:mi>r</m:mi><m:mo>*</m:mo></m:msubsup></m:math> to form a conjugate root pair. This pair of
+roots represents the product of two linear factors forming a real
+quadratic or second degree factor:</para>
+      <equation id="uid11">
+        <m:math mode="display">
+          <m:mrow>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>-</m:mo>
+            </m:mrow>
+            <m:msub>
+              <m:mi>z</m:mi>
+              <m:mi>r</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>)</m:mo>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+            </m:mrow>
+            <m:mo>-</m:mo>
+            <m:msubsup>
+              <m:mi>z</m:mi>
+              <m:mi>r</m:mi>
+              <m:mo>*</m:mo>
+            </m:msubsup>
+            <m:mrow>
+              <m:mo>)</m:mo>
+              <m:mo>=</m:mo>
+              <m:mo>(</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>x</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>+</m:mo>
+            <m:msup>
+              <m:mi>y</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mrow>
+              <m:mo>)</m:mo>
+              <m:mo>-</m:mo>
+              <m:mn>2</m:mn>
+            </m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>r</m:mi>
+            </m:msub>
+            <m:mi>z</m:mi>
+            <m:mo>+</m:mo>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249870">From <link target-id="uid4"/> a polynomial may be defined as the product of all of its
+factors. If the factors have only real coefficients, then the product of
+all the factors will have only real coefficients <m:math><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub></m:math>. Thus only half
+of the complex roots need be found, say in the upper complex half-plane
+with positive imaginary parts, i.e. <m:math><m:mrow><m:msub><m:mi>y</m:mi><m:mi>r</m:mi></m:msub><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>. The associated
+conjugate roots in the lower half-plane may be trivially derived by simple
+negation of their imaginary parts.</para>
+      <para id="id2249920">Most of the results in these modules are based on extensive numerical
+experimentation. We have built on existing theory and techniques with
+empirically derived rules and algorithms that perform well on well-conditioned
+polynomials and, in many cases, specifically applied to signal processing
+applications with random coefficients.</para>
+    </section>
+    <section id="uid12">
+      <title>Factoring Polynomials</title>
+      <para id="id2249937">Below are three approaches to factoring polynomials:</para>
+      <list id="id2249941" list-type="bulleted"><item><term>Find and Deflate:</term> The usual algorithms for factoring
+polynomials start by guessing or estimating the value of a zero, then
+using some descent method on |f(z)|, find a single zero. This zero is
+then removed from f(z) by "deflation" (f(z) is divided by the factor represented by the zero) and the process repeated on the
+reduced degree quotient polynomial. The descent method is often <link document="m15579"> Newton's </link>
+method which is implemented with <link document="m15099">   Horner's method </link>.  There may be problems
+with error accumulation which, after several deflations, results in
+failure. Also, if the zeros are not found and removed in a carefully
+chosen order, the quotient polynomial becomes poorly conditioned. This set of procedures is
+often simply called <link document="m15579"> Newton's </link> method. Methods presented in these notes
+include "Random Argument", "Chosen Argument", and "Pre-Whitening", all of
+which try to maintain or improve the conditioning of the quotient
+polynomial produced by deflation. The deflation itself must be done in a
+"stable" way to prevent error accumulation. In some cases, this involves
+using <link document="m15099">   Horner's method </link> and in others, the DFT.
+</item>
+        <item><term>Eigenvalue Method:</term> If the companion matrix for the polynomial
+is created, its eigenvalues are the zeros of the polynomial. Because very
+sophisticated algorithms have been developed for finding eigenvalues, this
+is a powerful and robust approach. However, it requires considerable
+computer memory for the matrices and is computationally inefficient and,
+therefore, slow. Matlab uses this approach.
+</item>
+        <item><term>Grid Search:</term> If one has knowledge from the structure of the
+polynomial what regions in the complex plane contain the zeros, a direct
+search can be used. Because a large class of polynomials, including those
+with random coefficients, have their zeros clusters around the unit
+circle, a very efficient polar coordinate grid search can be conducted to
+find good estimates for the zeros which are then found accurately by a
+Newton's or Laguerre's algorithm [18,19]. The Lindsey-Fox algorithm uses this
+approach. A description of <link document="m15573">    the
+  Lindsey-Fox program </link>
+</item>
+      </list>
+      <list id="id2250020" list-type="enumerated"><title>Bibliography</title>
+        <item id="bid3">
+J. Derbyshire, 
+<cite><cite-title>Unknown Quantity: A Real and Imaginary History of Algebra.</cite-title></cite> 
+Joseph Henry Press, an imprint of the National Academies Press,
+Washington,
+2006.
+</item>
+        <item id="bid0">
+V. Y. Pan, 
+"Solving a polynomial equation: some history and recent progress". 
+<cite><cite-title>SIAM Review.</cite-title></cite> 
+No. 2, 
+Vol. 39, 
+June
+1997.
+pp. 187–220. 
+</item>
+        <item id="bid1">
+V. Y. Pan, 
+"Solving Polynomials with Computers". 
+<cite><cite-title>American Scientist.</cite-title></cite> 
+No. 1, 
+Vol. 86, 
+January-February
+1998.
+pp. 62–69. 
+</item>
+        <item id="bid4">
+G. Sitton, C. S. Burrus, J. W. Fox, and S. Treitel, 
+"Factoring Very High Degree Polynomials in Signal Processing". 
+<cite><cite-title>Signal Processing Magazine</cite-title></cite>. 
+No. 6, 
+Vol. 20, 
+November
+2003.
+pp. 27–42. 
+</item>
+        <item id="bid2">
+J. F. Traub, 
+"Another Algorithm". 
+<cite><cite-title>American Scientist</cite-title></cite>. 
+No. 2, 
+Vol. 86, 
+March-April
+1998.
+pp. 108–109. 
+</item>
+        <item id="bid2a">
+J. M. McNamee
+"A Bibliography on Roots of Polynomials",
+<cite><cite-title>J. Comput. Appl. Math.</cite-title></cite>,
+47 (1993) pp. 391-394.
+78 (1997). 
+110 (1999) pp. 305-306.
+</item>
+</list>
+    </section>
+  </content>
+</document>

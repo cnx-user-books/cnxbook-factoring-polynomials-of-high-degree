@@ -1,0 +1,254 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Mathematical Principles for the LF Algorithm</title>
+  <metadata>
+  <md:content-id>m15577</md:content-id><md:title>Mathematical Principles for the LF Algorithm</md:title>
+  <md:abstract>Addendum gives the mathematical definitions and ideas used by the Lindsey-Fox algorithm</md:abstract>
+  <md:uuid>a9aacb78-b44f-4649-9767-141b8ad53d78</md:uuid>
+</metadata>
+
+<content>
+    <section id="uid1">
+      <title>Addendum: Mathematical Principles</title>
+      <para id="id2248149">The mathematical principles at the core of the <link document="m15573"> Lindsey-Fox</link> algorithm for polynomial
+factoring are given here.</para>
+      <para id="id2248155">An <m:math><m:msup><m:mi>N</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> degree polynomial is denoted by</para>
+      <equation id="uid2">
+        <m:math mode="display">
+          <m:mrow>
+            <m:mi>P</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>0</m:mn>
+            </m:msub>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mi>z</m:mi>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mn>2</m:mn>
+            </m:msup>
+            <m:mo>+</m:mo>
+            <m:mo>⋯</m:mo>
+            <m:mo>+</m:mo>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>N</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mi>N</m:mi>
+            </m:msup>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo>∑</m:mo>
+              <m:mi>n</m:mi>
+            </m:munder>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            <m:msup>
+              <m:mi>z</m:mi>
+              <m:mi>n</m:mi>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2248865">or</para>
+      <equation id="uid3"><m:math mode="display">
+          <m:mrow>
+            <m:mi>P</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo>∏</m:mo>
+              <m:mi>k</m:mi>
+            </m:munder>
+            
+              <m:mo>(</m:mo>
+<m:mrow>            
+  <m:mi>z</m:mi>
+              <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>z</m:mi>
+              <m:mi>k</m:mi>
+            </m:msub>
+</m:mrow>         
+              <m:mo>)</m:mo>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2248921">where <m:math><m:mrow><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>N</m:mi></m:mrow></m:math> or</para>
+      <equation id="uid4"><m:math mode="display">
+          <m:mrow>
+            <m:mi>P</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:munder>
+              <m:mo>∏</m:mo>
+              <m:mi>m</m:mi>
+            </m:munder>
+            
+              <m:mo>(</m:mo>
+<m:mrow>            
+  <m:mi>z</m:mi>
+              <m:mo>-</m:mo>
+            <m:msub>
+              <m:mi>z</m:mi>
+              <m:mi>m</m:mi>
+            </m:msub>
+</m:mrow>        
+    <m:msup>
+              <m:mo>)</m:mo>
+              <m:msub>
+                <m:mi>M</m:mi>
+                <m:mi>m</m:mi>
+              </m:msub>
+            </m:msup>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249013">where <m:math><m:mrow><m:mi>m</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>Q</m:mi></m:mrow></m:math> and <m:math><m:mrow><m:mi>N</m:mi><m:mo>=</m:mo><m:msub><m:mo>∑</m:mo><m:mi>m</m:mi></m:msub><m:msub><m:mi>M</m:mi><m:mi>m</m:mi></m:msub></m:mrow></m:math>.
+And <m:math><m:msub><m:mi>a</m:mi><m:mi>n</m:mi></m:msub></m:math> is the <m:math><m:msup><m:mi>n</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> coefficient, <m:math><m:msub><m:mi>z</m:mi><m:mi>k</m:mi></m:msub></m:math> is the <m:math><m:msup><m:mi>k</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> zero or root, <m:math><m:mi>N</m:mi></m:math> is the degree of the polynomial, <m:math><m:msub><m:mi>M</m:mi><m:mi>m</m:mi></m:msub></m:math> is the multiplicity of the <m:math><m:msup><m:mi>m</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> zero, and <m:math><m:mi>Q</m:mi></m:math> is number of distinct roots or zeros.</para>
+      <para id="id2249189">The <emphasis>fundamental theorem of algebra</emphasis> states that an <m:math><m:msup><m:mi>N</m:mi><m:mrow><m:mi>t</m:mi><m:mi>h</m:mi></m:mrow></m:msup></m:math> degree polynomial has <m:math><m:mi>N</m:mi></m:math> zeros.</para>
+      <para id="id2249226">The length-<m:math><m:mi>L</m:mi></m:math> discrete Fourier transform (DFT) of the <m:math><m:mi>N</m:mi></m:math> coefficients of a polynomial <m:math><m:mrow><m:mi>P</m:mi><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mrow></m:math> with <m:math><m:mrow><m:mi>L</m:mi><m:mo>≥</m:mo><m:mi>N</m:mi></m:mrow></m:math> are the <m:math><m:mi>L</m:mi></m:math> equally spaced samples of the polynomial evaluated on the unit circle of the complex plane.</para>
+      <equation id="uid5"><m:math mode="display">
+          <m:mrow>
+            <m:mi>D</m:mi>
+            <m:mi>F</m:mi>
+            <m:msub>
+              <m:mi>T</m:mi>
+              <m:mi>L</m:mi>
+            </m:msub>
+              <m:mo>{</m:mo>
+            <m:mrow>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+              <m:mo>}</m:mo>
+</m:mrow>            
+  <m:mo>=</m:mo>
+              <m:mi>P</m:mi>         
+     <m:mo>(</m:mo>
+<m:mrow>
+            <m:msup>
+              <m:mi>e</m:mi>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mi>π</m:mi>
+                <m:mi>i</m:mi>
+                <m:mi>k</m:mi>
+                <m:mo>/</m:mo>
+                <m:mi>L</m:mi>
+              </m:mrow>
+            </m:msup>
+</m:mrow>
+              <m:mo>)</m:mo>
+
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249358">for <m:math><m:mrow><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>L</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math></para>
+      <para id="id2249400">If the coefficients are multiplied by a geometric sequence, <m:math><m:msup><m:mi>r</m:mi><m:mi>n</m:mi></m:msup></m:math> , the DFT of this modulated set of coefficients are the <m:math><m:mi>L</m:mi></m:math> equally spaced samples of the polynomial evaluated on a circle of radius <m:math><m:mi>r</m:mi></m:math> in the complex plane.</para>
+      <equation id="uid6"><m:math mode="display">
+          <m:mrow>
+            <m:mi>D</m:mi>
+            <m:mi>F</m:mi>
+            <m:msub>
+              <m:mi>T</m:mi>
+              <m:mi>L</m:mi>
+            </m:msub>
+              <m:mo>{</m:mo>
+            <m:mrow>
+            <m:msup>
+              <m:mi>r</m:mi>
+              <m:mi>n</m:mi>
+            </m:msup>
+            <m:msub>
+              <m:mi>a</m:mi>
+              <m:mi>n</m:mi>
+            </m:msub>
+            </m:mrow>
+              <m:mo>}</m:mo>
+              <m:mo>=</m:mo>
+              <m:mi>P</m:mi>
+<m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>r</m:mi>
+            <m:msup>
+              <m:mi>e</m:mi>
+              <m:mrow>
+                <m:mn>2</m:mn>
+                <m:mi>π</m:mi>
+                <m:mi>i</m:mi>
+                <m:mi>k</m:mi>
+                <m:mo>/</m:mo>
+                <m:mi>L</m:mi>
+              </m:mrow>
+            </m:msup>
+            </m:mrow>
+              <m:mo>)</m:mo>
+                      </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249516">for <m:math><m:mrow><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>L</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math></para>
+      <para id="id2249556">Using Horner's method, the number of multiplications and additions necessary to directly calculate <m:math><m:mi>N</m:mi></m:math> equally spaced values of a degree <m:math><m:mi>N</m:mi></m:math> polynomial on the unit circle is proportional to <m:math><m:msup><m:mi>N</m:mi><m:mn>2</m:mn></m:msup></m:math> . If evaluated with the DFT, it is also proportional to <m:math><m:msup><m:mi>N</m:mi><m:mn>2</m:mn></m:msup></m:math> . If evaluated with the FFT, it is proportional to <m:math><m:mrow><m:mi>N</m:mi><m:mo form="prefix">log</m:mo><m:mo>(</m:mo><m:mi>N</m:mi><m:mo>)</m:mo></m:mrow></m:math>.</para>
+      <para id="id2249632">If the roots of a polynomial are at <m:math><m:mi>z</m:mi></m:math> , the roots of the same polynomial with the sequence of coefficients reversed (“flipped"), are at <m:math><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>z</m:mi></m:mrow></m:math> .</para>
+      <equation id="uid7">
+        <m:math mode="display">
+          <m:mrow>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:msup>
+                <m:mi>a</m:mi>
+                <m:mo>'</m:mo>
+              </m:msup>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mn>1</m:mn>
+              <m:mo>/</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>=</m:mo>
+            <m:msub>
+              <m:mi>P</m:mi>
+              <m:mi>a</m:mi>
+            </m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>z</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+          </m:mrow>
+        </m:math>
+      </equation>
+      <para id="id2249716">The “Minimum Modulus Theorem" can be stated several ways. A way most applicable to our test of the 3 node by 3 node cells is: If the minimum of an analytic function of a complex variable occurs in the interior of an open set, the minimum must in fact be a zero of the function.</para>
+      <para id="id2249729">If Newton's algorithm is applied to a polynomial and is started sufficiently close to a zero, it will quadratically converge to that zero if the zero is simple. If the zero is multiple, it still converges but only linearly. If Laguarre's algorithm is applied to a polynomial and is started sufficiently close to a zero, it will cubically converge to that zero if the zero is simple. If the zero is multiple, it still converges but only linearly.</para>
+    </section>
+  </content>
+</document>
